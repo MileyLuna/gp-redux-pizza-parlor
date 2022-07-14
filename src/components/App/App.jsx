@@ -21,7 +21,7 @@ function App() {
 							<Link to='/admin'>Admin</Link>
 						</li>
 						<li>
-							<Link to='/checkout'>Admin</Link>
+							<Link to='/checkout'>Checkout</Link>
 						</li>
 					</ul>
 				</header>
