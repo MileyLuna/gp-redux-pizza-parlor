@@ -8,38 +8,38 @@ import Checkout from '../Checkout/Checkout';
 import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
 function App() {
-	return (
-		<Router>
-			<div className='App'>
-				<header className='App-header'>
-					<h1 className='App-title'>Prime Pizza</h1>
-					<ul>
-						<li>
-							<Link to='/'>Home</Link>
-						</li>
-						<li>
-							<Link to='/admin'>Admin</Link>
-						</li>
-						<li>
-							<Link to='/checkout'>Checkout</Link>
-						</li>
-					</ul>
-				</header>
-				<Route path='/' exact>
-					<CreateOrder />
-				</Route>
-				<Route path='/checkout' exact>
-					<Checkout />
-				</Route>
-				<Route path='/admin' exact>
-					<Admin />
-				</Route>
-    <Route path='/info'>
-    <CustomerInfo />
-    </Route>
-			</div>
-		</Router>
-	);
+    return (
+        <Router>
+            <div className="App">
+                <header className="App-header">
+                    <h1 className="App-title">Prime Pizza</h1>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/admin">Admin</Link>
+                        </li>
+                        <li>
+                            <Link to="/checkout">Checkout</Link>
+                        </li>
+                    </ul>
+                </header>
+                <Route path="/" exact>
+                    <CreateOrder />
+                </Route>
+                <Route path="/checkout" exact>
+                    <Checkout />
+                </Route>
+                <Route path="/admin" exact>
+                    <Admin />
+                </Route>
+                <Route path="/info">
+                    <CustomerInfo />
+                </Route>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

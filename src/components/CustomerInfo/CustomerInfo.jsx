@@ -1,7 +1,11 @@
 //useState
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 //CSS
 import '../CustomerInfo/CustomerInfo.css';
+
+const dispatch = useDispatch();
 
 export default function CustomerInfo() {
     //useStates
@@ -14,24 +18,16 @@ export default function CustomerInfo() {
     //handleSubmit
     const handleSubmit = (event) => {
         event.preventDefault();
-        //ASYNC POST
-        axios
-            .post('/order', {
+        dispatch({
+            type: 'SUBMIT_CUSTOMERS',
+            payload: {
                 customerName,
                 streetAddress,
                 city,
                 zipCode,
                 type,
-            })
-            .then((response) => {
-                //GET
-                // refreshOrders();
-                //CLEAR INPUTS
-                clearInputs();
-            })
-            .catch((err) => {
-                console.log(`ERR POSTing: ${err}`);
-            });
+            },
+        });
     };
 
     //handleType => Pickup / Delivery
