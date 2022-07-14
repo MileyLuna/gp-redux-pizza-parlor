@@ -25,7 +25,16 @@ const orders = (state = [], action) => {
 	}
 };
 
-const pizzas = (state = [], action) => {
+const getPizzas = (state = [], action) => {
+	switch (action.type) {
+		case 'GET_PIZZA':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const pizzasList = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_PIZZA':
 			return [...state, action.payload];
@@ -49,8 +58,9 @@ const storeInstance = createStore(
 	combineReducers({
 		carts,
 		customerInfo,
-		pizzas,
+		pizzasList,
 		orders,
+		getPizzas,
 	}),
 	applyMiddleware(logger)
 );
