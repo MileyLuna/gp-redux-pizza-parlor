@@ -1,6 +1,23 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './CreateOrderItem.css';
 
 function CreateOrderItem({ pizza }) {
+	const [isClicked, setIsClicked] = useState(false);
+	const dispatch = useDispatch();
+
+	const handleAdd = () => {
+		dispatch({ type: 'ADD_PIZZA', payload: { name: pizza.name, price: pizza.price } });
+		dispatch({ type: 'ADD_COST', payload: Number(pizza.price) });
+		setIsClicked(!isClicked);
+	};
+
+	const handleRemove = () => {
+		dispatch({ type: 'REMOVE_PIZZA', payload: pizza.name });
+		dispatch({ type: 'REMOVE_COST', payload: Number(pizza.price) });
+		setIsClicked(!isClicked);
+	};
+
 	return (
 		<>
 			<div className='pizzaCard'>
@@ -9,7 +26,15 @@ function CreateOrderItem({ pizza }) {
 					<h2 className='pizzaName'>{pizza.name}</h2>
 					<p className='pizzaDescription'>{pizza.description}</p>
 					<h3 className='pizzaPrice'>${pizza.price}</h3>
-					<button className='pizzaAdd'>Add</button>
+					{!isClicked ? (
+						<button className='pizzaAdd' onClick={handleAdd}>
+							Add
+						</button>
+					) : (
+						<button className='pizzaAdd' onClick={handleRemove}>
+							REMOVE
+						</button>
+					)}
 				</div>
 			</div>
 		</>
