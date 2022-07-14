@@ -23,9 +23,24 @@ li {
 	color: white;
 }
 li:hover {
-	transform: scale(1.05);
+	transform: scale(1.01);
 }
 .link {
+	position: relative;
 	text-decoration: none;
 	color: white;
+	top: -100px;
+}
+.totalCost {
+	position: relative;
+	top: -100px;
+	right: -650px;
+	color: white;
+}
+.cartIcon {
+	position: relative;
+	top: -50px;
+	right: -600px;
+	color: blue;
+	width: 50px;
 }

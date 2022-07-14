@@ -7,9 +7,12 @@ import CreateOrder from '../CreateOrder/CreateOrder';
 import Checkout from '../Checkout/Checkout';
 import CustomerInfo from '../CustomerInfo/CustomerInfo';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function App() {
 	const dispatch = useDispatch();
+	const totalCost = useSelector((state) => state.totalCost);
 
 	const getPizzas = () => {
 		axios
@@ -29,6 +32,8 @@ function App() {
 			<div className='App'>
 				<header className='App-header'>
 					<h1 className='App-title'>Prime Pizza</h1>
+					<ShoppingCartIcon className='cartIcon' />
+					<h2 className='totalCost'>{totalCost}</h2>
 					<ul>
 						<li>
 							<Link className='link' to='/'>

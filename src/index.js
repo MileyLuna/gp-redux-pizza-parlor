@@ -34,12 +34,24 @@ const getPizzas = (state = [], action) => {
 	}
 };
 
+const totalCost = (state = 0, action) => {
+	console.log(action.payload);
+	switch (action.type) {
+		case 'ADD_COST':
+			return (state += action.payload);
+		case 'REMOVE_COST':
+			return (state -= action.payload);
+		default:
+			return state;
+	}
+};
+
 const pizzasList = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_PIZZA':
 			return [...state, action.payload];
 		case 'REMOVE_PIZZA':
-			return state.filter((pizza) => pizza !== action.payload);
+			return state.filter((pizza) => pizza.name !== action.payload);
 		default:
 			return state;
 	}
@@ -61,6 +73,7 @@ const storeInstance = createStore(
 		pizzasList,
 		orders,
 		getPizzas,
+		totalCost,
 	}),
 	applyMiddleware(logger)
 );

@@ -9,7 +9,7 @@ function CreateOrder() {
 		<>
 			<h1>Step 1: Select your pizza</h1>
 			{getPizzas.map((pizza) => (
-				<CreateOrderItem pizza={pizza} />
+				<CreateOrderItem pizza={pizza} key={pizza.id} />
 			))}
 			<button className='nextButton'>NEXT</button>
 		</>
