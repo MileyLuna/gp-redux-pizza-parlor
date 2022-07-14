@@ -3,37 +3,33 @@ import axios from 'axios';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Admin from '../Admin/Admin';
 import './App.css';
+import CreateOrder from '../CreateOrder/CreateOrder';
 
 
 import Checkout from '../Checkout/Checkout';
 
 
 function App() {
-
   return (
     <Router >
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-
-
-    <Checkout />
-
-
-  
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
-      <ul>
+        <ul>
         <li>
           {/* <Link to='/Admin'>Admin</Link> */}
         </li>
       </ul>
-    
-      <Route path="/Admin" exact>
+      </header>
+      <Route path="/" exact>
+        <CreateOrder />
+      </Route>
+      <Route path="/checkout" exact>
+        <Checkout />
+      </Route>
+      <Route path="/admin" exact>
         <Admin />
       </Route>
-
     </div>
     </Router>
 
