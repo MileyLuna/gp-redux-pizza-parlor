@@ -4,6 +4,10 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Admin from '../Admin/Admin';
 import './App.css';
 
+
+import Checkout from '../Checkout/Checkout';
+
+
 function App() {
 
   return (
@@ -12,6 +16,11 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+
+
+    <Checkout />
+
+
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
@@ -24,6 +33,7 @@ function App() {
       <Route path="/Admin" exact>
         <Admin />
       </Route>
+
     </div>
     </Router>
 
