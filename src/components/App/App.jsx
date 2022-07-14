@@ -34,9 +34,9 @@ function App() {
 				<Route path='/admin' exact>
 					<Admin />
 				</Route>
-    <Route path='/info'>
-    <CustomerInfo />
-    </Route>
+				<Route path='/info'>
+					<CustomerInfo />
+				</Route>
 			</div>
 		</Router>
 	);

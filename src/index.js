@@ -8,26 +8,24 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 const carts = (state = [], action) => {
-    switch (action.type) {
-        case 'ADD_TO_CART':
-            return [...state, action.payload];
-    }
-    return state;
+	switch (action.type) {
+		case 'ADD_TO_CART':
+			return [...state, action.payload];
+		default:
+			return state;
+	}
 };
 
 const storeInstance = createStore(
-    combineReducers(
-        {
-            carts
-        }
-    ),
-    applyMiddleware(
-        logger
-    )
-)
+	combineReducers({
+		carts,
+	}),
+	applyMiddleware(logger)
+);
 
-
-ReactDOM.render(    
-<Provider store={storeInstance}>
-    <App />
-</Provider>, document.getElementById('root'));
+ReactDOM.render(
+	<Provider store={storeInstance}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+);
