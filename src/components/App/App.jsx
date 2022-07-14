@@ -4,8 +4,8 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Admin from '../Admin/Admin';
 import './App.css';
 import CreateOrder from '../CreateOrder/CreateOrder';
-
 import Checkout from '../Checkout/Checkout';
+import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
 function App() {
 	return (
@@ -34,6 +34,9 @@ function App() {
 				<Route path='/admin' exact>
 					<Admin />
 				</Route>
+    <Route path='/info'>
+    <CustomerInfo />
+    </Route>
 			</div>
 		</Router>
 	);
