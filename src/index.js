@@ -29,9 +29,9 @@ const totalCost = (state = 0, action) => {
 	console.log(action.payload);
 	switch (action.type) {
 		case 'ADD_COST':
-			return (state += action.payload);
+			return Math.round((state + action.payload) * 1e12) / 1e12;
 		case 'REMOVE_COST':
-			return (state -= action.payload);
+			return Math.round((state - action.payload) * 1e12) / 1e12;
 		default:
 			return state;
 	}
