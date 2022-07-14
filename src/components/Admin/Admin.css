@@ -1,0 +1,22 @@
+#adminHeader{
+    background:linear-gradient(rgb(255, 30, 0),rgb(223, 156, 21)) ;
+    padding: 20px;
+    text-align: center;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
