@@ -3,4 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+
+const carts = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_TO_CART':
+            return [...state, action.payload];
+    }
+    return state;
+};
+
+const storeInstance = createStore(
+    combineReducers(
+        {
+            carts
+        }
+    ),
+    applyMiddleware(
+        logger
+    )
+)
+
+
+ReactDOM.render(    
+<Provider store={storeInstance}>
+    <App />
+</Provider>, document.getElementById('root'));
