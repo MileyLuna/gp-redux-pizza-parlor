@@ -17,7 +17,7 @@ function App() {
       <p>Pizza is great.</p>
       <ul>
         <li>
-          <Link to='/Admin'>Admin</Link>
+          {/* <Link to='/Admin'>Admin</Link> */}
         </li>
       </ul>
     
