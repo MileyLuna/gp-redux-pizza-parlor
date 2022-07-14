@@ -1,0 +1,26 @@
+table,
+th,
+td {
+    border: 1px solid;
+}
+
+h1, .customerInfo {
+    text-align: left;
+}
+
+.deliveryType, .checkBtn, .clearBtn, .backBtn {
+    text-align: right;
+}
+
+.container{
+    display: inline-flex;
+    
+}
+
+/* .info{
+    text-align: left;
+}
+
+.delivery{
+    text-align: right;
+} */
