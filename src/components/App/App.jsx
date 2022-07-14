@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Admin from '../Admin/Admin';
@@ -6,8 +6,24 @@ import './App.css';
 import CreateOrder from '../CreateOrder/CreateOrder';
 import Checkout from '../Checkout/Checkout';
 import CustomerInfo from '../CustomerInfo/CustomerInfo';
+import { useDispatch } from 'react-redux';
 
 function App() {
+	const dispatch = useDispatch();
+
+	const getPizzas = () => {
+		axios
+			.get('/api/pizza')
+			.then((response) => {
+				dispatch({ type: 'GET_PIZZA', payload: response.data });
+			})
+			.catch((err) => alert('Error in get', err));
+	};
+
+	useEffect(() => {
+		getPizzas();
+	}, []);
+
 	return (
 		<Router>
 			<div className='App'>
@@ -15,13 +31,19 @@ function App() {
 					<h1 className='App-title'>Prime Pizza</h1>
 					<ul>
 						<li>
-							<Link to='/'>Home</Link>
+							<Link className='link' to='/'>
+								Home
+							</Link>
 						</li>
 						<li>
-							<Link to='/admin'>Admin</Link>
+							<Link className='link' to='/admin'>
+								Admin
+							</Link>
 						</li>
 						<li>
-							<Link to='/checkout'>Checkout</Link>
+							<Link className='link' to='/checkout'>
+								Checkout
+							</Link>
 						</li>
 					</ul>
 				</header>

@@ -7,11 +7,18 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
-
 const orders = (state = [], action) => {
 	switch (action.type) {
 		case 'GET_ORDERS':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const getPizzas = (state = [], action) => {
+	switch (action.type) {
+		case 'GET_PIZZA':
 			return action.payload;
 		default:
 			return state;
@@ -42,8 +49,9 @@ const storeInstance = createStore(
 	combineReducers({
 		carts,
 		customerInfo,
-		pizzas,
+		pizzasList,
 		orders,
+		getPizzas,
 	}),
 	applyMiddleware(logger)
 );
