@@ -15,7 +15,7 @@ img {
 }
 .pizzaAdd {
 	position: relative;
-	bottom: -55px;
+	bottom: -65px;
 	left: 0px;
 	height: 100px;
 	width: 400px;
@@ -28,8 +28,20 @@ img {
 .pizzaPrice {
 	position: relative;
 	right: -110px;
-	bottom: -50px;
+	bottom: -5px;
 }
 .pizzaDescription {
 	margin-top: 10px;
+}
+.nextButton {
+	position: relative;
+	top: 450px;
+	height: 80px;
+	width: 160px;
+	background-color: lightblue;
+	border-radius: 10px;
+}
+.nextButton:hover {
+	cursor: pointer;
+	transform: scale(1.05);
 }

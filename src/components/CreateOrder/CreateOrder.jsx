@@ -9,7 +9,7 @@ function CreateOrder() {
 					<img src='images/pizza_photo.png' />
 					<h2 className='pizzaName'>Pizza Marinara</h2>
 					<p className='pizzaDescription'>
-						Cheeseless pizza with marinara, garlic, and red peppers.
+						No cheese pizza with marinara, garlic, and red peppers.
 					</p>
 					<h3 className='pizzaPrice'>$12.99</h3>
 					<button className='pizzaAdd'>Add</button>
@@ -33,6 +33,8 @@ function CreateOrder() {
 					<button className='pizzaAdd'>Add</button>
 				</div>
 			</div>
+
+			<button className='nextButton'>NEXT</button>
 		</>
 	);
 }
