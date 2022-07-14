@@ -16,9 +16,41 @@ const carts = (state = [], action) => {
 	}
 };
 
+const orders = (state = [], action) => {
+	switch (action.type) {
+		case 'GET_ORDERS':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const pizzas = (state = [], action) => {
+	switch (action.type) {
+		case 'ADD_PIZZA':
+			return [...state, action.payload];
+		case 'REMOVE_PIZZA':
+			return state.filter((pizza) => pizza !== action.payload);
+		default:
+			return state;
+	}
+};
+
+const customerInfo = (state = [], action) => {
+	switch (action.type) {
+		case 'SUBMIT_CUSTOMERS':
+			return [action.type];
+		default:
+			return state;
+	}
+};
+
 const storeInstance = createStore(
 	combineReducers({
 		carts,
+		customerInfo,
+		pizzas,
+		orders,
 	}),
 	applyMiddleware(logger)
 );
