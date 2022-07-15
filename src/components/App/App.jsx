@@ -23,8 +23,18 @@ function App() {
 			.catch((err) => alert('Error in get', err));
 	};
 
+	const getOrders = () => {
+		axios
+			.get('/api/order')
+			.then((response) => {
+				dispatch({ type: 'GET_ORDERS', payload: response.data });
+			})
+			.catch((err) => alert('Error in get', err));
+	};
+
 	useEffect(() => {
 		getPizzas();
+		getOrders();
 	}, []);
 
 	return (

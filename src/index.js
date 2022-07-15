@@ -26,7 +26,6 @@ const getPizzas = (state = [], action) => {
 };
 
 const totalCost = (state = 0, action) => {
-	console.log(action.payload);
 	switch (action.type) {
 		case 'ADD_COST':
 			return Math.round((state + action.payload) * 1e12) / 1e12;
