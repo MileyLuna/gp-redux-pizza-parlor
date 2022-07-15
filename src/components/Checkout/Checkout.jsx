@@ -24,7 +24,7 @@ function Checkout({ getOrders }) {
 				city: customerInfo[0].city,
 				zip: customerInfo[0].zipCode,
 				type: customerInfo[0].type,
-				total: totalCost, //!!!!!!!!!! UPDATE
+				total: totalCost, 
 				pizzas: pizzasList,
 			})
 			.then((response) => {
