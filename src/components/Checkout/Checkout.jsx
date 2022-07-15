@@ -2,9 +2,11 @@ import '../Checkout/Checkout.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Checkout() {
 	const dispatch = useDispatch();
+	const history = useHistory();
 
 	const customerInfo = useSelector((store) => store.customerInfo);
 	const pizzasList = useSelector((store) => store.pizzasList);
@@ -33,6 +35,7 @@ function Checkout() {
 			.catch((err) => {
 				console.log('Error in client POST:', err);
 			});
+		history.push('/');
 	};
 
 	return (
@@ -73,7 +76,7 @@ function Checkout() {
 
 			<h1 className='total'>Total: {totalCost}</h1>
 
-			<button className='checkBtn' onClick={pizzaTime}>
+			<button className='nextButton' onClick={pizzaTime}>
 				CHECKOUT
 			</button>
 		</>
