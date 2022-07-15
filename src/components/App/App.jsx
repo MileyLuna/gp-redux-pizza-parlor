@@ -45,19 +45,19 @@ function App() {
 					<ShoppingCartIcon className='cartIcon' />
 					<h2 className='totalCost'>{totalCost}</h2>
 					<ul>
-						<li>
+						<li className='nav'>
 							<Link className='link' to='/'>
 								Home
 							</Link>
 						</li>
-						<li>
+						<li className='nav'>
 							<Link className='link' to='/admin'>
 								Admin
 							</Link>
 						</li>
-						<li>
-							<Link className='link' to='/checkout'>
-								Checkout
+						<li className='nav'>
+							<Link className='link' to='/info'>
+								Customer Info
 							</Link>
 						</li>
 					</ul>
