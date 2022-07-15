@@ -59,7 +59,6 @@ const customerInfo = (state = [], action) => {
 
 const storeInstance = createStore(
 	combineReducers({
-		carts,
 		customerInfo,
 		pizzasList,
 		orders,
