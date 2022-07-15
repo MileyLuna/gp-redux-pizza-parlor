@@ -1,9 +1,15 @@
 import { useSelector } from 'react-redux';
 import './CreateOrder.css';
 import CreateOrderItem from '../CreateOrderItem/CreateOrderItem';
+import { useHistory } from 'react-router-dom';
 
 function CreateOrder() {
+	const history = useHistory();
 	const getPizzas = useSelector((state) => state.getPizzas);
+
+	const handleNext = () => {
+		history.push('/info');
+	};
 
 	return (
 		<>
@@ -11,7 +17,9 @@ function CreateOrder() {
 			{getPizzas.map((pizza) => (
 				<CreateOrderItem pizza={pizza} key={pizza.id} />
 			))}
-			<button className='nextButton'>NEXT</button>
+			<button className='nextButton' onClick={handleNext}>
+				NEXT
+			</button>
 		</>
 	);
 }
