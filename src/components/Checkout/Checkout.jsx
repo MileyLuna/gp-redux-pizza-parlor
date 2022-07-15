@@ -40,49 +40,48 @@ function Checkout({ getOrders }) {
 	};
 
 	return (
-        <>
-            <h2>Step 3: Checkout</h2>
-            <div className="row">
-                <ul className="customer-info">
-                    <li>{customerInfo[0].customerName}</li>
-                    <li>{customerInfo[0].streetAddress}</li>
-                    <li>
-                        {customerInfo[0].city} {customerInfo[0].zipCode}
-                    </li>
-                </ul>
-                <div>
-                    <div className="deliveryType">
-                        {customerInfo[0].type}
-                    </div>
-                </div>
-            </div>
+		<>
+			<h2>Step 3: Checkout</h2>
+			<div className='row'>
+				<ul className='customer-info'>
+					<li>{customerInfo[0].customerName}</li>
+					<li>{customerInfo[0].streetAddress}</li>
+					<li>
+						{customerInfo[0].city} {customerInfo[0].zipCode}
+					</li>
+				</ul>
+				<div>
+					<div className='deliveryType'>{customerInfo[0].type}</div>
+				</div>
+			</div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Cost</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {pizzasList.map((pizza, i) => {
-                        console.log(pizza);
-                        return (
-                            <tr key={i}>
-                                <td> {pizza.name}</td>
-                                <td> {pizza.price}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Cost</th>
+					</tr>
+				</thead>
+				<tbody>
+					{pizzasList.map((pizza, i) => {
+						console.log(pizza);
+						return (
+							<tr key={i}>
+								<td> {pizza.name}</td>
+								<td> {pizza.price}</td>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
 
-            <h1 className="total">Total: {totalCost}</h1>
+			<h1 className='total'>Total: {totalCost}</h1>
 
-            <button className="checkBtn" onClick={pizzaTime}>
-                CHECKOUT
-            </button>
-        </>
+			<button className='checkBtn' onClick={pizzaTime}>
+				CHECKOUT
+			</button>
+		</>
 	);
+}
 
 export default Checkout;
