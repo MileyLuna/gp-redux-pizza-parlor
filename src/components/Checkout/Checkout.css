@@ -1,26 +1,32 @@
 table,
 th,
 td {
-    border: 1px solid;
+	border: 1px solid;
 }
 
-h1, .customerInfo {
-    text-align: left;
+div.row {
+	display: flex;
+	width: 50%;
 }
 
-.deliveryType, .checkBtn, .clearBtn, .backBtn {
-    text-align: right;
+h1,
+.customerInfo {
+	text-align: left;
 }
 
-.container{
-    display: inline-flex;
-    
+.deliveryType,
+.checkBtn,
+.clearBtn,
+.backBtn {
+	text-align: right;
 }
 
-/* .info{
-    text-align: left;
+ul.customer-info {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
 }
 
-.delivery{
-    text-align: right;
-} */
+li {
+	color: black;
+}
