@@ -7,7 +7,10 @@ function CreateOrderItem({ pizza }) {
 	const dispatch = useDispatch();
 
 	const handleAdd = () => {
-		dispatch({ type: 'ADD_PIZZA', payload: { name: pizza.name, price: pizza.price } });
+		dispatch({
+			type: 'ADD_PIZZA',
+			payload: { id: pizza.id, quantity: 1, name: pizza.name, price: pizza.price },
+		});
 		dispatch({ type: 'ADD_COST', payload: Number(pizza.price) });
 		setIsClicked(!isClicked);
 	};

@@ -24,7 +24,7 @@ function Checkout() {
 				zip: customerInfo[0].zipCode,
 				type: customerInfo[0].type,
 				total: totalCost, //!!!!!!!!!! UPDATE
-				// pizzas: pizzasList,
+				pizzas: pizzasList,
 			})
 			.then((response) => {
 				dispatch({
