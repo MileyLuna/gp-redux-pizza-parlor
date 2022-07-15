@@ -40,48 +40,49 @@ function Checkout({ getOrders }) {
 	};
 
 	return (
-		<>
-			<h2>Step 3: Checkout</h2>
+        <>
+            <h2>Step 3: Checkout</h2>
+            <div className="row">
+                <ul className="customer-info">
+                    <li>{customerInfo[0].customerName}</li>
+                    <li>{customerInfo[0].streetAddress}</li>
+                    <li>
+                        {customerInfo[0].city} {customerInfo[0].zipCode}
+                    </li>
+                </ul>
+                <div>
+                    <div className="deliveryType">
+                        {customerInfo[0].type}
+                    </div>
+                </div>
+            </div>
 
-			<div className='container'>
-				<div className='information'>
-					<p>{customerInfo[0].customerName}</p>
-					<p>{customerInfo[0].streetAddress}</p>
-					<p>
-						{customerInfo[0].city} {customerInfo[0].zipCode}
-					</p>
-				</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {pizzasList.map((pizza, i) => {
+                        console.log(pizza);
+                        return (
+                            <tr key={i}>
+                                <td> {pizza.name}</td>
+                                <td> {pizza.price}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
 
-				<p className='deliveryType'>{customerInfo[0].type}</p>
-			</div>
+            <h1 className="total">Total: {totalCost}</h1>
 
-			<table>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Cost</th>
-					</tr>
-				</thead>
-				<tbody>
-					{pizzasList.map((pizza, i) => {
-						console.log(pizza);
-						return (
-							<tr key={i}>
-								<td> {pizza.name}</td>
-								<td> {pizza.price}</td>
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
-
-			<h1 className='total'>Total: {totalCost}</h1>
-
-			<button className='nextButton' onClick={pizzaTime}>
-				CHECKOUT
-			</button>
-		</>
+            <button className="checkBtn" onClick={pizzaTime}>
+                CHECKOUT
+            </button>
+        </>
 	);
-}
 
 export default Checkout;
