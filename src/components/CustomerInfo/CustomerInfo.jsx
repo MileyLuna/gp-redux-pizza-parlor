@@ -44,7 +44,7 @@ export default function CustomerInfo() {
 		<>
 			<h1>Step 2: Customer Information</h1>
 			<div className='form-container'>
-				<form onSubmit={handleSubmit}>
+				<form>
 					<div className='form-customer'>
 						<input
 							type='string'
@@ -84,6 +84,9 @@ export default function CustomerInfo() {
 						<label htmlFor='delivery'>Delivery</label>
 					</div>
 				</form>
+				<button className='nextButton' onClick={handleSubmit}>
+					NEXT
+				</button>
 			</div>
 		</>
 	);
