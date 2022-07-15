@@ -31,6 +31,8 @@ const totalCost = (state = 0, action) => {
 			return Math.round((state + action.payload) * 1e12) / 1e12;
 		case 'REMOVE_COST':
 			return Math.round((state - action.payload) * 1e12) / 1e12;
+		case 'CLEAR':
+			return 0;
 		default:
 			return state;
 	}
@@ -42,6 +44,8 @@ const pizzasList = (state = [], action) => {
 			return [...state, action.payload];
 		case 'REMOVE_PIZZA':
 			return state.filter((pizza) => pizza.name !== action.payload);
+		case 'CLEAR':
+			return [];
 		default:
 			return state;
 	}
@@ -51,6 +55,8 @@ const customerInfo = (state = [], action) => {
 	switch (action.type) {
 		case 'SUBMIT_CUSTOMERS':
 			return [action.payload];
+		case 'CLEAR':
+			return [];
 		default:
 			return state;
 	}

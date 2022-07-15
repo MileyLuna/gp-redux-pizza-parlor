@@ -66,7 +66,7 @@ function App() {
 					<CreateOrder />
 				</Route>
 				<Route path='/checkout' exact>
-					<Checkout />
+					<Checkout getOrders={getOrders} />
 				</Route>
 				<Route path='/admin' exact>
 					<Admin />
