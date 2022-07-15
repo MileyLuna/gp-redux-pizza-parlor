@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-function Checkout() {
+function Checkout({ getOrders }) {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
@@ -15,6 +15,7 @@ function Checkout() {
 
 	const pizzaTime = (event) => {
 		event.preventDefault();
+		console.log(pizzasList);
 
 		axios
 			.post('/api/order', {
@@ -27,9 +28,9 @@ function Checkout() {
 				pizzas: pizzasList,
 			})
 			.then((response) => {
+				getOrders();
 				dispatch({
-					type: 'ADD_PIZZA',
-					payload: response.data,
+					type: 'CLEAR',
 				});
 			})
 			.catch((err) => {
