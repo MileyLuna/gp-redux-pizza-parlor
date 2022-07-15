@@ -51,7 +51,7 @@ const pizzasList = (state = [], action) => {
 const customerInfo = (state = [], action) => {
 	switch (action.type) {
 		case 'SUBMIT_CUSTOMERS':
-			return [action.type];
+			return [action.payload];
 		default:
 			return state;
 	}
